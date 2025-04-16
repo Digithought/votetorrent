@@ -1,0 +1,46 @@
+{
+  "name": "@votetorrent/carve",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "CARVE - Cellular Automata for Reversible Vector Encryption",
+  "main": "dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "files": [
+    "src",
+    "dist",
+    "!dist/test",
+    "!**/*.tsbuildinfo"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "aegir clean",
+    "build": "aegir build --env node",
+    "lint": "aegir lint",
+    "test": "aegir test",
+    "test:node": "aegir test -t node",
+		"prove": "node --loader ts-node/esm test/test.ts",
+    "dep-check": "aegir dep-check"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "aegir": "^45.1.4"
+  },
+  "dependencies": {
+    "@noble/secp256k1": "^2.2.3",
+    "multiformats": "^13.3.2",
+    "uint8arrays": "^5.1.0"
+  },
+  "aegir": {
+    "build": {
+      "config": {
+        "platform": "node",
+        "external": ["crypto"]
+      }
+    }
+  }
+}

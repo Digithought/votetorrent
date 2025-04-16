@@ -1,0 +1,8 @@
+{
+	"extends": "aegir/src/config/tsconfig.aegir.json",
+  "compilerOptions": {
+		"strictFunctionTypes": true,
+		"outDir": "dist"
+  },
+  "include": ["src", "test"]
+}
